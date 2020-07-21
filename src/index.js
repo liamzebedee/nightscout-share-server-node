@@ -7,8 +7,8 @@ const NIGHTSCOUT_ENDPOINT_URL = process.env.NIGHTSCOUT_ENDPOINT_URL
 if(!NIGHTSCOUT_ENDPOINT_URL) throw new Error("NIGHTSCOUT_ENDPOINT_URL is not set.")
 
 app.post('/ShareWebServices/Services/General/LoginPublisherAccountByName', (req, res) => {
-    const FAKE_TOKEN = "satoshiwasblack"
-    res.json({ data: FAKE_TOKEN })
+    const FAKE_TOKEN = "e3e3e6a5-coolsessionid-bro"
+    res.json(FAKE_TOKEN)
     /**
      * 
      * 
@@ -78,9 +78,7 @@ app.post('/ShareWebServices/Services/Publisher/ReadPublisherLatestGlucoseValues'
 
     const sgvs = json.map(nightscoutEntryToDexcomEntry)
 
-    res.json({
-        data: sgvs
-    })
+    res.json(sgvs)
 })
 
 function nightscoutEntryToDexcomEntry(entry) {
